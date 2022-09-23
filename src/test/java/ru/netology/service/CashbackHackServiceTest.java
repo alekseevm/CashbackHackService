@@ -1,44 +1,43 @@
 package ru.netology.service;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
 
     @Test
-    public void checkAmount900() {
+    public void check900() {
         CashbackHackService service = new CashbackHackService();
         int expected = 100;
-        assertEquals(service.remain(900), expected);
+        assertEquals(expected, service.remain(900));
     }
 
     @Test
     public void checkZero() {
         CashbackHackService service = new CashbackHackService();
         int expected = 1000;
-        assertEquals(service.remain(0), expected);
+        assertEquals(expected, service.remain(0));
     }
 
     @Test
     public void checkEqualsBoundary() {
         CashbackHackService service = new CashbackHackService();
         int expected = 0;
-        assertEquals(service.remain(1000), expected);
+        assertEquals(expected, service.remain(1000));
     }
 
     @Test
-    public void checkMoreThanBoundary() {
+    public void checkThanBoundary() {
         CashbackHackService service = new CashbackHackService();
         int expected = 0;
-        assertEquals(service.remain(1001), expected);
+        assertEquals(expected, service.remain(1001));
     }
 
     @Test
-    public void checkAmountIsMinus() {
+    public void checkIsMinus() {
         CashbackHackService service = new CashbackHackService();
         int expected = 0;
-        assertEquals(service.remain(-100), expected);
+        assertEquals(expected, service.remain(-100));
     }
-
 }
